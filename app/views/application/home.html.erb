@@ -1,0 +1,6 @@
+<h1>Whoa</h1>
+
+<% if current_user %>
+  <p><%= session[:name] %></p>
+  <a href="/secret">Secret</a>
+<% end %>
