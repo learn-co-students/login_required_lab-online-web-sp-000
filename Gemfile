@@ -44,3 +44,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'capybara'
 end
+
+gem "pry-rails", "~> 0.3.9", :groups => [:development, :test]
+
+gem "pry", "~> 0.12.2", :groups => [:development, :test]
