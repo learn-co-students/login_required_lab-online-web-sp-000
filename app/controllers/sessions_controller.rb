@@ -1,11 +1,15 @@
 class SessionsController < ApplicationController
-  
+
   def new
   end
 
   def create
-    session[:name] = params[:name]
-    redirect_to '/secret'
+    if params[:name].nil? || params[:name].empty?
+      redirect_to '/'
+    else
+      session[:name] = params[:name]
+      redirect_to '/secret'
+    end
   end
 
   def destroy
