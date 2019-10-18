@@ -5,9 +5,6 @@ Rails.application.routes.draw do
   # resources :secrets, only: [:create, :show]
   # resources :sessions, only: [:new, :destroy]
 
-  get 'secrets/new'
-
-  root 'application#hello'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
