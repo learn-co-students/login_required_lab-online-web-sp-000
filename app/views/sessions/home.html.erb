@@ -1,0 +1,7 @@
+<%= "Welcome," current_user %>
+
+<%= link_to '/secretes/show', "Secrete" %>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <input type=submit value='logout'>
+  <% end %>
