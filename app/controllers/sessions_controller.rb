@@ -1,13 +1,18 @@
 class SessionsController < ApplicationController
 
-    before_action: require_login, only: [:index]
-
-    def index
+    def new
     
     end
 
-    def show 
+    def create 
+        return redirect_to (controller: 'sessions', action: 'new') if !params[:name] || params[:name].empty?
+        session[:name] = params[:name]
+        redirect_to controller: 'application', action: 'hello'
+    end
 
+    def destroy
+        session.delete
+        redirect_to controller: 'application', action: 'hello'
     end
 
 end
