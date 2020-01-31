@@ -1,0 +1,16 @@
+<% if session[:name] %>
+  <h1>Hi, <%= session[:name] %></h1>
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <input type=submit value='logout'>
+  <% end %>
+
+    <%= form_tag ({controller: 'secrets', action: 'show', method: 'post'}) do %>
+      <input type=submit value='secret!'>
+
+  <% end %>
+
+<% else %>
+  <h1>you need to be logged in!</h1>
+  <%= button_to 'log in', { controller: 'sessions', action: 'new' }, method: 'get' if !session[:username] %>
+
+<% end %>
