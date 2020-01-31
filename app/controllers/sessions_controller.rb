@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-
   end
 
   def create
@@ -13,14 +12,6 @@ class SessionsController < ApplicationController
   def destroy
     session.delete :name
     redirect_to controller: 'application', action: 'hello'
-  end
-
-
-  private
-
-  def current_user
-    return unless session[:name]
-    @current_user ||= session[:name]
   end
 
 end
