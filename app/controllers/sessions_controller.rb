@@ -11,9 +11,9 @@ class SessionsController < ApplicationController
   def create
     if params[:name].present?
       session[:name] = params[:name]
-      redirect_to '/'
+      redirect_to '/secrets/index'
     else
-      redirect_to :login
+      redirect_to "/"
     end
   end
 
