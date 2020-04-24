@@ -7,3 +7,9 @@ Rails.application.routes.draw do
   post '/destroy', to: 'sessions#destroy'
   root 'sessions#login'
 end
+
+#get '/login' => 'sessions#new'
+#post '/login' => 'sessions#create'
+#post '/logout' => 'sessions#destroy'
+
+#get '/secret' => 'secrets#show'

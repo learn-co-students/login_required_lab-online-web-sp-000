@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        if params[:name] && !params[:name].empty?
+        if params[:name] && params[:name].present?
             session[:name] = params[:name]
         else
             redirect_to new_path
