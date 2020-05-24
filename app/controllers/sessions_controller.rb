@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
+  before_action :screened_name
   skip_before_action :screened_name, only: [:destroy]
+  
   def new; end
 
   def create
