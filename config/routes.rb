@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :sessions, only: [:new, :create]
+  get '/', to: "sessions#new"
+  get "/sessions/home", to: "sessions#home"
+  post "/sessions/delete", to: "sessions#destroy"
+  get "/secrets/show", to: "secrets#show"
 end

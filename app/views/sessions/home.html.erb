@@ -1,0 +1,7 @@
+<%= "Hi, #{current_user}"%>
+<%= link_to "secret page", secrets_show_path%>
+
+<%= form_tag("/sessions/delete") do%>
+  <input type="hidden" name="_method" value="delete">
+  <input type=submit value='delete'>
+<% end %>
