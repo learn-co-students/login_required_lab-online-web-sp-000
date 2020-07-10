@@ -8,10 +8,8 @@ class SessionsController < ApplicationController
   end 
 
   def create
-    # byebug
     if !name_field_empty?
       set_session
-      #byebug
       redirect_to '/sessions/index'
     else   
       redirect_to '/sessions/new'

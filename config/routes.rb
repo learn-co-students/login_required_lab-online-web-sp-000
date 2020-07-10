@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy' => 'sessions#destroy'
 
+  post 'sessions/destroy' => 'sessions#destroy'
+
   post 'sessions/create' => 'sessions#create'
 
 
