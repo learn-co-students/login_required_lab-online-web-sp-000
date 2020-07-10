@@ -3,12 +3,12 @@ class SessionsController < ApplicationController
   end 
 
   def create
-    byebug
-    if !logged_in? || name_field_empty?
+    # byebug
+    if !name_field_empty?
+      session[:name] = params[:name]
+      redirect_to '/'
+    else   
       redirect_to '/sessions/new'
-    else
-      byebug
-      current_user = params[:name]
     end 
   end
 
@@ -19,5 +19,6 @@ class SessionsController < ApplicationController
   def name_field_empty? 
     params[:name].nil? || params[:name] == ''
   end 
+
   
 end
