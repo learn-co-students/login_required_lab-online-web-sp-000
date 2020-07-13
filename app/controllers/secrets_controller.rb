@@ -4,16 +4,12 @@ class SecretsController < ApplicationController
  
   def show
 
-    if !current_user
-      redirect_to controller: 'sessions', action: 'new'
-    end
   end
- 
  
   private
  
   def require_login
-    return head(:forbidden) unless session.include? :name
+    return redirect_to('/') unless session.include? :name
   end  
 
 end
