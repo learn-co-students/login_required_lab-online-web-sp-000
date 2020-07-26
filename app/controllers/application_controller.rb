@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    return head(:forbidden) unless session.include? :user_id
+    redirect_to new_session_path unless session.include? :name
   end
 end
