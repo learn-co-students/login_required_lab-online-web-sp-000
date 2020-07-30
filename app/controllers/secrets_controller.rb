@@ -1,8 +1,13 @@
 class SecretsController < ApplicationController
   before_action :require_login
+  skip_before_action :require_login, only: [:show]
 
   def show
-    @document = Document.find(params[:id])
+    if current_user
+      render :show
+    else
+      redirect_to '/login'
+    end
   end
 
   def require_login
