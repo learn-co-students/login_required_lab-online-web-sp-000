@@ -5,7 +5,6 @@ class SecretsController < ApplicationController
   end
 
   def show
-    @secret = Secret.find(params[:name])
   end
   
   private
