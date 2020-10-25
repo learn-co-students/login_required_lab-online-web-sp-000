@@ -1,0 +1,10 @@
+<h1>Hello, <%=session[:name]%>, Welcome to your homepage </h1>
+
+<p>logout?</p>
+<%= form_tag({controller: 'sessions', action: 'destroy', method: "post"}) do %>
+  <input type='hidden' name='authenticity_token' value='<%=form_authenticity_token %>'>
+ <input type=submit value="logout">
+<%end %>
+
+<p>secret page! shh</p>
+<%= link_to "Super secret content", secret_path%>

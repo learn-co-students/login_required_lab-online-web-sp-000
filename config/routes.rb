@@ -3,6 +3,11 @@ Rails.application.routes.draw do
 
   resource :secret
 
+  root to: 'application#hello'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  post '/destory', to: 'sessions#destroy'
+
   resource :session do
     get 'login', to: 'sessions#new'
   end
