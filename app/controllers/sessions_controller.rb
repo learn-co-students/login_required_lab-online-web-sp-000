@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # byebug
     if params[:name].nil? || params[:name].empty?
       redirect_to '/login'
     else
