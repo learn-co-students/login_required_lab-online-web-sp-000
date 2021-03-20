@@ -17,7 +17,7 @@ RSpec.describe SessionsController do
       post :create, params: { name: me }
       expect(@request.session[:name]).to eq me
     end
-  end
+  end 
 
   describe 'destroy' do
     it 'leaves session[:name] nil if it was not set' do
