@@ -2,7 +2,8 @@ class SecretsController < ApplicationController
     before_action :current_user
 
     def homepage
-        redirect_to root_path
+        @user = session[:name]
+        render '/sessions/index'
     end
     
     def show
