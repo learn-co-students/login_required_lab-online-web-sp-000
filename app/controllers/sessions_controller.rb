@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
     before_action :current_user
 
     def create
-        byebug
+        #byebug
     end
 
     def destroy
