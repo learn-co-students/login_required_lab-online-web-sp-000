@@ -4,12 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-    if !session[:name] || session[:name].empty?
-      return nil 
-    else
       # byebug
-      @session = session[:name]
-      # byebug
-    end
+      session[:name]
+      # if it's the current user then they're logged in, so a session has been created
   end
 end
