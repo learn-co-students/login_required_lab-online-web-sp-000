@@ -7,11 +7,11 @@ RSpec.describe SecretsController do
       expect(response).to redirect_to controller: 'sessions', action: 'new'
     end
 
-    # it "should show you the secret if you're logged in" do
-    #   # note, in this test we're sending a get request to the secretscontroller with no params.
-    #   # if your route expects a param of id you'll get this error No route matches {:action=>"show", :controller=>"secrets"}
-    #   get :show, session: {name: 'Maya Angelou'}
-    #   assert_response 200
-    # end
+    it "should show you the secret if you're logged in" do
+      # note, in this test we're sending a get request to the secretscontroller with no params.
+      # if your route expects a param of id you'll get this error No route matches {:action=>"show", :controller=>"secrets"}
+      get :show, session: {name: 'Maya Angelou'}
+      assert_response 200
+    end
   end
 end
